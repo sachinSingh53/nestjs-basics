@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpException, HttpStatus, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
 import{SongsService} from './songs.service'
 import { CreateSongDTO } from './dto/create-song-dto';
 
@@ -22,8 +22,13 @@ export class SongsController {
     }
 
     @Get(':id')
-    findById(){
-        return 'endpoint to findBy Id'
+    findById(
+        @Param('id',ParseIntPipe)
+        id:Number,
+    ){
+        
+        
+        return `findBy Id ${typeof id}`
     }
 
     @Put()
