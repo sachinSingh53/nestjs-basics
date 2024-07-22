@@ -4,9 +4,13 @@ import { AppService } from './app.service';
 import { SongsModule } from './songs/songs.module';
 import { LoggerMiddleware } from './common/middlewares/logger/logger.middleware';
 import { SongsController } from './songs/songs.controller';
+import { UserModule } from './user/user.module';
+import { BookmarksModule } from './bookmarks/bookmarks.module';
+import { AuthModule } from './auth/auth.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
-  imports: [SongsModule],
+  imports: [SongsModule, UserModule, BookmarksModule, AuthModule, PrismaModule],
   controllers: [AppController],
   providers: [AppService],
 })

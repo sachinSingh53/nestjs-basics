@@ -11,7 +11,7 @@ export class SongsService {
     }
 
     findAll(){
-        throw new Error('Error in fetching the records');
+        // throw new Error('Error in fetching the records');
         return this.songs;
     }
 }

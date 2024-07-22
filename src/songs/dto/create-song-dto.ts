@@ -6,8 +6,8 @@ export class CreateSongDTO{
     readonly title:string;
 
     @IsNotEmpty()
-    // @IsArray()
-    @IsString()
+    @IsArray()
+    @IsString({each:true})
     readonly artist:string;
 
     @IsNotEmpty()
